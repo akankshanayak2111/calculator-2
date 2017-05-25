@@ -1,4 +1,4 @@
-from arithmetic import *
+from arithmetic1 import *
 
 while True:
     prompt = '''Enter the math operator:
@@ -9,6 +9,8 @@ while True:
 
     calculator = user_input.split(" ")
     operator = calculator[0]
+    numbers = calculator[1:]
+    numbers = [int(i) for i in numbers]
 
     if operator == 'q':
         break
@@ -26,11 +28,11 @@ while True:
     else:
         num2 = int(calculator[2])
         if operator == 'add':
-            print add(num1, num2)
+            print add(numbers)
         elif operator == 'sub':
             print subtract(num1, num2)
         elif operator == 'mul':
-            print multiply(num1, num2)
+            print multiply(numbers)
         elif operator == 'div':
             num1 = float(calculator[1])
             num2 = float(calculator[2])
